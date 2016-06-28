@@ -25,18 +25,12 @@ $ gulp watch
 Adding Cordova Plugins
 
 ```bash
-$ cordova plugins add ionic-plugin-keyboard cordova-plugin-console cordova-plugin-device
-
-
-* [background GPS service](https://github.com/pmwisdom/cordova-background-geolocation-services)
-* [un autre service GPS (je sais pas s'il est gratuit)](https://github.com/transistorsoft/cordova-background-geolocation-lt)
-* [bg GPS](http://www.plugreg.com/plugin/mauron85/cordova-plugin-background-geolocation)
-* [Navite sound effect](http://gonehybrid.com/how-to-add-sound-effects-to-your-ionic-app-with-native-audio/)
-* [ngCordova](http://ngcordova.com/)
-* [social sharing](http://ngcordova.com/docs/plugins/socialSharing/)
-
-```bash
-$ cordova plugin add https://github.com/pmwisdom/cordova-background-geolocation-services.git
+$ ionic plugin add cordova-plugin-console
+$ ionic plugin add cordova-plugin-device
+$ ionic plugin add cordova-plugin-mauron85-background-geolocation
+$ ionic plugin add cordova-plugin-whitelist
+$ ionic plugin add cordova-plugin-x-socialsharing
+$ ionic plugin add ionic-plugin-keyboard
 ```
 
 Adding Android permission in AndroidManifest.xml
@@ -49,17 +43,22 @@ Adding Android permission in AndroidManifest.xml
 Adding Cordova Platforms
 
 ```bash
-$ cordova platform add ios
+$ ionic platform add ios
+$ ionic platform add android
 ```
 
 Build
 
 ```bash
-$ gulp && cordova build
+$ gulp && ionic build
 ```
+
+Installing the emulator
+
+* https://docs.genymotion.com/Content/01_Get_Started/Installation.htm
 
 Running in the emulator
 
 ```bash
-$ cordova emulate ios
+$ ionic run android
 ```

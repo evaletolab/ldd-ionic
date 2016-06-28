@@ -7,7 +7,7 @@
   },
 
   "dependencies": {
-    "animate.css": "^3.5.1",
-    "ngCordova": "^0.1.26-alpha"
+    "animate.css": "3.x",
+    "ngCordova": "0.1.x"
   }
 }
