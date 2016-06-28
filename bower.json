@@ -1,0 +1,13 @@
+{
+  "name": "ldd-ionic",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.x",
+    "font-awesome": "4.x"
+  },
+
+  "dependencies": {
+    "animate.css": "^3.5.1",
+    "ngCordova": "^0.1.26-alpha"
+  }
+}

@@ -1,0 +1,82 @@
+/* Empty. Add your own CSS if you like */
+
+/*.on-dash-class{
+  &.ng-enter {
+    -webkit-animation: zoomOutUp 1s;
+    -moz-animation: zoomOutUp 1s;
+    -ms-animation: zoomOutUp 1s;
+    animation: zoomOutUp 1s;
+  }
+  &.ng-leave {
+    -webkit-animation: bounceOut 1s;
+    -moz-animation: bounceOut 1s;
+    -ms-animation: bounceOut 1s;
+    animation: bounceOut 1s;
+  }
+}
+*/
+.on-dash-test{
+		transition: all .600s ease-in-out;
+					transform:scale(100);          
+}
+
+
+.on-dash{
+  -webkit-animation:bounceIn .7s linear;
+     -moz-animation:bounceIn .7s linear;
+          animation:bounceIn .7s linear; 
+}
+
+
+.product{
+    text-align: center;
+    margin: 0px auto;
+    width: 200px;
+    padding-top: 20%;
+}
+
+.product .title{
+	color: rgb(12, 96, 238);
+	font-weight: 700;
+	font-size: 20px;
+}
+
+.product .button{
+    border: 30px solid #0c60ee;
+    border-radius: 50%;
+    margin: 10% auto;
+    width: 150px;
+    height: 150px;
+    padding: 5%;
+}
+
+.product .button .fa{
+	color: rgb(12, 96, 238);
+}
+
+.slider {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  right: 0 !important;
+}
+/*.slider-slide {
+  color: #000;
+  background-color: #ddd;
+}*/
+
+.button.ng-hide{
+  display:none;
+}
+
+.product, .scroll {
+  height: 100%;
+  min-height: 100%;
+}
+
+
+#map{
+  width: 100%,
+  height:100%;
+}

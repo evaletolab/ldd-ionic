@@ -1,0 +1,48 @@
+{
+  "name": "ldd-ionic",
+  "version": "0.0.1",
+  "description": "ldd-ionic POC",
+  "scripts": {
+    "install": "./node_modules/.bin/bower install && ./node_modules/.bin/gulp"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "1.x",
+    "gulp": "3.x",
+    "gulp-util": "2.x",
+    "gulp-concat": "2.x.0",
+    "gulp-sass": "^2.3.2",
+    "shelljs": "0.x",
+    "css-loader": "0.x",
+    "del": "2.x",
+    "exports-loader": "0.x",
+    "file-loader": "0.x",
+    "html-loader": "0.x",
+    "html-webpack-plugin": "1.x",
+    "json-loader": "0.x",
+    "lodash": "3.x",
+    "node-sass": "3.x",
+    "open": "0.0.x",
+    "sass-loader": "3.x",
+    "style-loader": "0.x",
+    "url-loader": "0.x",
+    "webpack": "1.x",
+    "webpack-dev-server": "1.x"
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "ionic-plugin-keyboard",
+    "cordova-plugin-mauron85-background-geolocation",
+    {
+      "locator": "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
+      "id": "cordova-plugin-x-socialsharing"
+    }
+  ],
+  "cordovaPlatforms": [
+    "android"
+  ]
+}
