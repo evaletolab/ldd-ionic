@@ -2,12 +2,12 @@
 
 
 // inject deps
-AssetsCtrl.$inject=['$scope','$rootScope','$cordovaSocialSharing','$cordovaMedia','$ionicLoading','$ionicPlatform','$log'];
+AssetsCtrl.$inject=['$scope','$rootScope','$cordovaSocialSharing','LddPlayer','$ionicLoading','$ionicPlatform','$log'];
 
 
 
 // implement service
-function AssetsCtrl($scope, $rootScope, $cordovaSocialSharing,$cordovaMedia, $ionicLoading, $ionicPlatform, $log) {
+function AssetsCtrl($scope, $rootScope, $cordovaSocialSharing,LddPlayer, $ionicLoading, $ionicPlatform, $log) {
 
 	$scope.items=[
  	  { 
@@ -87,7 +87,7 @@ function AssetsCtrl($scope, $rootScope, $cordovaSocialSharing,$cordovaMedia, $io
   		// first time, load player?
       if(!item.media){
 	      // $ionicLoading.show({template: 'Loading...'});
-	      item.media = $cordovaMedia.newMedia(item.sound);
+	      item.media = new LddPlayer(item.sound);
 	      // item.media.$promise.finally(function() {
 	      // 	$ionicLoading.hide();
 	      // })
