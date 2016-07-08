@@ -75,6 +75,9 @@
   min-height: 100%;
 }
 
+.green {
+  color:#00ff00;
+}
 
 #map{
   width: 100%,

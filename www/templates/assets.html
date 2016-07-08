@@ -1,0 +1,41 @@
+<ion-view view-title="Assets">
+  <ion-content>
+    <ion-list show-delete="options.showDelete" can-swipe="true" _type_="card">
+
+        <ion-item ng-repeat="item in items" 
+                  item="item"
+                  ng-click="play(item.id)" class="item-remove-animate">
+          <!-- http://ionicons.com/ -->
+          <i ng-class="{'ion-android-radio-button-off':!item.played,'ion-android-checkmark-circle':item.played}"></i>
+          {{item.h}} <span ng-show="item.duration">({{item.position|number:2}}/{{item.duration|number:2}})</span>
+          <i ng-class="{'ion-ios-play':item.pause,'ion-ios-pause':item.play}" class="pull-right green"></i>
+<!--           
+          <img ng-src="{{item.img}}">
+          <h2>{{item.h}}</h2>
+          <p>{{item.p}}</p>
+ -->          
+          <ion-delete-button class="ion-minus-circled" 
+                             ng-click="onItemDelete(item)"></ion-delete-button>
+          </ion-option-button>
+          <ion-option-button class="button-calm"
+                             ng-click="share(item)">Share</ion-option-button>
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+
+
+<!--         <ion-item _href="#" _class="item-thumbnail-left">
+            <h2>Item 1</h2>
+            <ion-option-button class="button-positive ion-ios-pulse ">L</ion-option-button>
+            <ion-option-button class="button-light icon ion-email"></ion-option-button>
+            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
+        </ion-item>
+        <ion-item ng-click="select" >
+            <h2>Item 2</h2>
+            <ion-option-button class="button-light icon ion-heart"></ion-option-button>
+            <ion-option-button class="button-light icon ion-email"></ion-option-button>
+            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
+        </ion-item>
+ -->    
+    </ion-list>
+  </ion-content>
+</ion-view>

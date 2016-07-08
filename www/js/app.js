@@ -27,7 +27,9 @@ angular.module('starter', ['ionic','ngAnimate','ngCordova'])
 
 
 .controller('AccountCtrl',AccountCtrl)
+.controller('AssetsCtrl',AssetsCtrl)
 .controller('GeoCtrl',GeoCtrl)
 .factory('geoService',LddGeoServiceFactory)
+.factory('lddPlayer',LddPlayer)
 .config(LddStates);
 

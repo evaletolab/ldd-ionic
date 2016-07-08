@@ -31,6 +31,7 @@ $ ionic plugin add [cordova-plugin-mauron85-background-geolocation](https://gith
 $ ionic plugin add cordova-plugin-whitelist
 $ ionic plugin add cordova-plugin-x-socialsharing
 $ ionic plugin add ionic-plugin-keyboard
+$ cordova plugin add cordova-plugin-media
 ```
 
 Adding Android permission in AndroidManifest.xml
@@ -38,6 +39,11 @@ Adding Android permission in AndroidManifest.xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+```
+
+In config.xml
+```XML
+<preference name="AndroidPersistentFileLocation" value="Compatibility" />
 ```
 
 Adding Platforms

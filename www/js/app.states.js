@@ -31,6 +31,16 @@ function LddStates($stateProvider, $urlRouterProvider) {
     }
   })
 
+  .state('tab.assets', {
+    url: '/assets',
+    views: {
+      'tab-assets': {
+        templateUrl: 'templates/assets.html',
+        controller: 'AssetsCtrl'
+      }
+    }
+  })
+
 
   .state('tab.account', {
     url: '/account',

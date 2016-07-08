@@ -50,10 +50,7 @@ function GeoCtrl($scope, $rootScope, $timeout, geoService, $cordovaSocialSharing
 
 
 	$rootScope.$on('geo:position', function(event,location) {
-
-		console.log("---------------geo data"+ JSON.stringify(location))
-
-// {"time":1467127362000,"speed":0,"altitude":376.437225,"bearing":0,"provider":"gps","longitude":6.144768333333333,"debug":false,"latitude":46.20378833333333,"accuracy":1,"locationProvider":0}
+	// {"time":1467127362000,"speed":0,"altitude":376.437225,"bearing":0,"provider":"gps","longitude":6.144768333333333,"debug":false,"latitude":46.20378833333333,"accuracy":1,"locationProvider":0}
 		 $ionicLoading.show({
           template: '<ion-spinner icon="bubbles"></ion-spinner><br/>New position (speed:'+location.speed+')'
      });
