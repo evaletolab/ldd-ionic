@@ -5,9 +5,9 @@
     "ionic": "driftyco/ionic-bower#1.x",
     "font-awesome": "4.x"
   },
-
   "dependencies": {
     "animate.css": "3.x",
-    "ngCordova": "0.1.x"
+    "ngCordova": "0.1.x",
+    "lodash": "^4.13.1"
   }
 }

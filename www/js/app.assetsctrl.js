@@ -2,56 +2,53 @@
 
 
 // inject deps
-AssetsCtrl.$inject=['$scope','$rootScope','$cordovaSocialSharing','LddPlayer','$ionicLoading','$ionicPlatform','$log'];
+AssetsCtrl.$inject=['$scope','$rootScope','$cordovaSocialSharing','LddPlayer','nora','$ionicLoading','$ionicPlatform','$log'];
 
 
 
 // implement service
-function AssetsCtrl($scope, $rootScope, $cordovaSocialSharing,LddPlayer, $ionicLoading, $ionicPlatform, $log) {
+function AssetsCtrl($scope, $rootScope, $cordovaSocialSharing,LddPlayer, nora, $ionicLoading, $ionicPlatform, $log) {
 
-	$scope.items=[
- 	  { 
- 	  	id: 10, 
- 	  	img:'//passeurdesciences.blog.lemonde.fr/files/2016/07/Dolly_face_closeup-550x367.jpg',
- 	  	sound:'https://dl.airtable.com/KPuOSZBPQzOM95k0dT0C_les-pie%CC%80ces-de-puzzle.m4a',
- 	  	h:'Sélection scientifique de la semaine',
- 	  	p:'Si le juge d’instruction suit ces réquisitions, la banque suisse et sa filiale française seraient jugées en France. Accusées d’y avoir mis en place, dans les années 2000, un système de fraude fiscale généralisée, elles risqueraient une amende colossale.' ,
- 	  	position:0
- 	  },
- 	  { 
- 	  	id: 11, 
- 	  	img:'//s2.lemde.fr/image/2016/07/08/534x0/4965961_6_c330_2016-07-08-555510a-26224-qlsqrd_b9d64592bedc7fb60649c1d286048f6d.jpg',
- 	  	sound:'https://dl.airtable.com/kuXjQYAGSlqR1n05FBCd_l-apparition-d-un-visage.m4a',
- 	  	h:'A Segré, toutes les saveurs du swing, en profondeur ou à la sauvette',
- 	  	p:'Si le juge d’instruction suit ces réquisitions, la banque suisse et sa filiale française seraient jugées en France. Accusées d’y avoir mis en place, dans les années 2000, un système de fraude fiscale généralisée, elles risqueraient une amende colossale.', 
- 	  	position:0
- 	  },
- 	  { 
- 	  	id: 12, 
- 	  	img:'http://s1.lemde.fr/image/2016/07/07/534x0/4965301_7_d35a_2016-07-07-f069bb2-17122-vgb7sa_a71bc9bc30751fd85dad66e10a873252.jpg',
- 	  	sound:'https://dl.airtable.com/2yVxCML6QDKbmrqXxkEW_la-rencontre-avec-l-amie-d-ale%CC%81as.m4a',
- 	  	h:'Sélection scientifique de la semaine',
- 	  	p:'Si le juge d’instruction suit ces réquisitions, la banque suisse et sa filiale française seraient jugées en France. Accusées d’y avoir mis en place, dans les années 2000, un système de fraude fiscale généralisée, elles risqueraient une amende colossale.' ,
- 	  	position:0
- 	  },
- 	  {
- 	  	id: 13, 
- 	  	img:'//passeurdesciences.blog.lemonde.fr/files/2016/07/Dolly_face_closeup-550x367.jpg',
- 	  	sound:'https://dl.airtable.com/dEgmqZD9QRu4lGen5o52_une-histoire-a%CC%80-me-raconter.m4a',
- 	  	h:'La ristouille ne frappera pas!',
- 	  	p:'Si le juge d’instruction suit ces réquisitions, la banque suisse et sa filiale française seraient jugées en France. Accusées d’y avoir mis en place, dans les années 2000, un système de fraude fiscale généralisée, elles risqueraient une amende colossale.', 
- 	  	position:0
- 	  }
-	];
+/**
+	{
+	  "id": "recR9iMZ5oMYkZSLk",
+	  "title": "La traduction du successif du monde extérieur",
+	  "audio_file": [
+	      {
+	          "id": "attNtnDqirCV04aFo",
+	          "url": "https://dl.airtable.com/t55hy3XSeGZHUOOS1aQK_la-traduction-du-successif.m4a",
+	          "filename": "la-traduction-du-successif.m4a",
+	          "size": 2406380,
+	          "type": "audio/x-m4a"
+	      }
+	  ],
+	  "doc_url": "http://www.liminaire.fr/spip.php?article1230",
+	  "text": "Si vous me demandez ce que c’est, je ne le sais pas. Et plutôt que de mettre en pièces, construire des raccords entre différents plans : éléments de classes et de séries hétérogènes. Une image. Surpris de ce qui apparaît sous la main, sous les yeux, si surpris que l’on se précipite pour aller voir par là, au cas où il y aurait quelque chose. Si vous ne me le demandez pas je le sais. Le plus souvent, c’est le cas. Un sentiment d’arrêt, ou de mouvement amorcé. Pour ainsi dire la traduction du successif du monde extérieur dans la forme de notre sens intérieur, le temps. // Ce qui peut commencer. Tout ce qui précède explique la grande puissance de l’art des sons ou de la musique du fait que celle-ci est pour nous métaphoriquement un temps condensé et si elle le veut, empli au plus haut degré, et du fait qu’elle lie avec la règle de sa progression la plus grande variation dans ce qui se passe en elle. Ce qu’on envisage avec un mélange de peur et d’envie. Et davantage que cela : mystérieusement. ",
+	  "image": [
+	      {
+	          "id": "attEKCbITXNwR2SGw",
+	          "url": "https://dl.airtable.com/o0DWg7Y4QiSpc2rKX3GD_Orle%CC%81ans.jpg",
+	          "filename": "Orléans.jpg",
+	          "size": 1566804,
+	          "type": "image/jpeg",
+	          "thumbnails": {
+	              "small": {
+	                  "url": "https://dl.airtable.com/9W3fSn88Sgys6ObNetq7_small_Orle%CC%81ans.jpg",
+	                  "width": 54,
+	                  "height": 36
+	              },
+	              "large": {
+	                  "url": "https://dl.airtable.com/XW3RdAZ0RBSUYSDobEZH_large_Orle%CC%81ans.jpg",
+	                  "width": 256,
+	                  "height": 171
+	              }
+	          }
+	      }
+	  ]
+	}
 
-	//
-	// index the list
-	var map={
-		10:0,
-		11:1,
-		12:2,
-		13:3
-	};
+*/
+	$scope.items=[];
 
 	//
 	// current media
@@ -65,9 +62,28 @@ function AssetsCtrl($scope, $rootScope, $cordovaSocialSharing,LddPlayer, $ionicL
 	}
 
 
+	$rootScope.toggle=function() {
+		$rootScope.options.autoPlay=!$rootScope.options.autoPlay;
 
-  $scope.play = function(id) {
-  		var item=$scope.items[map[id]];
+		//
+		// play game
+		if($rootScope.options.autoPlay===true){
+			var current=nora.current_asset();
+			while(!current.asset.audio_file){
+				current=nora.signal_asset_complete();
+			}
+
+  		var item=_.find($scope.items,{id:current.asset.id});
+
+			$scope.play(item);
+		}
+
+	}
+
+
+
+  $scope.play = function(item) {
+
 
       //
       // case of pause
@@ -87,7 +103,12 @@ function AssetsCtrl($scope, $rootScope, $cordovaSocialSharing,LddPlayer, $ionicL
   		// first time, load player?
       if(!item.media){
 	      // $ionicLoading.show({template: 'Loading...'});
-	      item.media = new LddPlayer(item.sound);
+
+				// $scope.items[0].id	
+				// $scope.items[0].title	
+				// $scope.items[0].audio_file[0].url	
+
+	      item.media = new LddPlayer(item.audio_file[0].url);
 	      // item.media.$promise.finally(function() {
 	      // 	$ionicLoading.hide();
 	      // })
@@ -111,6 +132,14 @@ function AssetsCtrl($scope, $rootScope, $cordovaSocialSharing,LddPlayer, $ionicL
 	      	item.played=true;
 	      	item.position=0;
 	      	item.duration=0;
+					if($rootScope.options.autoPlay){
+						var next=nora.signal_asset_complete();
+						if(next.asset){
+				  		next=_.find($scope.items,{id:next.asset.id});
+							$scope.play(next);
+						}
+					}
+
 	      },function(err) {
 	      	console.log('----------'+JSON.stringify(err));
 	      },function(update) {
@@ -125,18 +154,30 @@ function AssetsCtrl($scope, $rootScope, $cordovaSocialSharing,LddPlayer, $ionicL
 	    })(item);
   }
 
-  // var mediaStatusCallback = function(status) {
-  //     if(status == 1) {
-  //         $ionicLoading.show({template: 'Loading...'});
-  //     } else {
-  //         $ionicLoading.hide();
-  //     }
-  // };
 
 
 	$rootScope.$on('geo:position', function(event,location) {
-		console.log('--------------------',location)
-	// {"time":1467127362000,"speed":0,"altitude":376.437225,"bearing":0,"provider":"gps","longitude":6.144768333333333,"debug":false,"latitude":46.20378833333333,"accuracy":1,"locationProvider":0}
+
+		// assets_for_current_zone()
+		// current_asset()
+		// current_zone_id()
+		// signal_asset_complete()
+		// update_position(position)
+
+		nora.update_position({coords:location})
+		$scope.currentZone=nora.current_zone_id();
+
+
+		nora.assets_for_current_zone().forEach(function(item,i) {
+			// console.log('----------------------('+$scope.items.length+') id:'+item.id+' zone:'+$scope.currentZone)
+			if(!_.find($scope.items,{id:item.id})&&item.audio_file){
+				item.currentZone=$scope.currentZone;
+				$scope.items.push(item);
+			}
+
+		});
+
+
 
 	});
 

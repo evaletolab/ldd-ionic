@@ -20,10 +20,13 @@
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/lodash/lodash.js"></script>
+    <script src="lib/nora/bundle.js"></script>
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
     <script src="js/app.states.js"></script>
+    <script src="js/app.nora.js"></script>
     <script src="js/app.geoservice.js"></script>
     <script src="js/app.player.js"></script>
     <script src="js/app.geoctrl.js"></script>
@@ -45,7 +48,7 @@
       </div>
       <h1 class="title">LDD</h1>
       <div class="buttons">
-        <button class="button" ng-click="options.autoPlay=!options.autoPlay">
+        <button class="button" ng-click="toggle()">
             <i ng-class="{'ion-ios-play':!options.autoPlay,'ion-ios-pause':options.autoPlay}"></i> Auto play
         </button>
       </div>

@@ -1,13 +1,13 @@
 <ion-view view-title="Assets">
   <ion-content>
-    <ion-list show-delete="options.showDelete" can-swipe="true" _type_="card">
+    <ion-list show-delete="options.showDelete" can-swipe="true" >
 
-        <ion-item ng-repeat="item in items" 
+        <ion-item ng-repeat="item in items|filter:{currentZone:currentZone}" 
                   item="item"
-                  ng-click="play(item.id)" class="item-remove-animate">
+                  ng-click="play(item)" class="item-remove-animate">
           <!-- http://ionicons.com/ -->
           <i ng-class="{'ion-android-radio-button-off':!item.played,'ion-android-checkmark-circle':item.played}"></i>
-          {{item.h}} <span ng-show="item.duration">({{item.position|number:2}}/{{item.duration|number:2}})</span>
+          {{item.title}} ({{currentZone}}) <span ng-show="item.duration">({{item.position|number:2}}/{{item.duration|number:2}})</span>
           <i ng-class="{'ion-ios-play':item.pause,'ion-ios-pause':item.play}" class="pull-right "></i>
 <!--           
           <img ng-src="{{item.img}}">

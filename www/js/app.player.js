@@ -9,25 +9,25 @@ LddPlayer.$inject=['$window','$interval','$q','$log'];
 function LddPlayer($window, $interval, $q, $log) {
 
 	//
-	// private functions
-  function setTimer(media) {
-      if (angular.isDefined(media.mediaTimer)) {
+	// Private functions
+  function setTimer(player) {
+      if (angular.isDefined(player.mediaTimer)) {
         return;
       }
 
-      media.mediaTimer = $interval(function () {
-          if (media.mediaDuration < 0) {
-              media.mediaDuration = media.getDuration();
-              if (media.$defer && media.mediaDuration > 0) {
-                media.$defer.notify({duration: media.mediaDuration});
+      player.mediaTimer = $interval(function () {
+          if (player.mediaDuration < 0) {
+              player.mediaDuration = player.media.getDuration();
+              if (player.$defer && player.mediaDuration > 0) {
+                player.$defer.notify({duration: player.mediaDuration});
               }
           }
 
-          media.getCurrentPosition(
+          player.media.getCurrentPosition(
             // success callback
             function (position) {
                 if (position > -1) {
-                    media.mediaPosition = position;
+                    player.mediaPosition = position;
                 }
             },
             // error callback
@@ -35,41 +35,37 @@ function LddPlayer($window, $interval, $q, $log) {
                 console.log('Error getting pos=' + e);
             });
 
-          if (media.$defer) {
-            media.$defer.notify({position: media.mediaPosition});
-          }
+            player.$defer.notify({position: player.mediaPosition});
 
       }, 1000);
   }
 
-  function clearTimer(media) {
-      if (angular.isDefined(media.mediaTimer)) {
-          $interval.cancel(media.mediaTimer);
-          media.mediaTimer = undefined;
+  function clearTimer(player) {
+      if (angular.isDefined(player.mediaTimer)) {
+          $interval.cancel(player.mediaTimer);
+          player.mediaTimer = undefined;
       }
   }
 
-  function resetValues(media) {
-      media.mediaPosition = -1;
-      media.mediaDuration = -1;
-  }
 
   //
-  // constructor
+  // Public API
   function LddPlayer(src) {
       var self=this;
+      this.$defer=$q.defer();
+      this.mediaPosition = -1;
+     	this.mediaDuration = -1;
+     	this.mediaTimer = undefined;
+
       this.media = new Media(src,
         function (success) {
-            self.media.$defer.resolve(success);
+            self.$defer.resolve(success);
         }, function (error) {
-            self.media.$defer.reject(error);
+            self.$defer.reject(error);
         }, function (status) {
             self.media.mediaStatus = status;
-            self.media.$defer.notify({status: self.media.mediaStatus});
+            self.$defer.notify({status: self.media.mediaStatus});
         });
-      clearTimer(this.media);
-      resetValues(this.media);
-      this.media.$defer=$q.defer();
   }
 
   // iOS quirks :
@@ -83,13 +79,13 @@ function LddPlayer($window, $interval, $q, $log) {
 
       this.media.play(options);
 
-      setTimer(this.media);
+      setTimer(this);
 
-      return this.media.$defer.promise;
+      return this.$defer.promise;
   };
 
   LddPlayer.prototype.pause = function () {
-      clearTimer(this.media);
+      clearTimer(this);
       this.media.pause();
   };
 
@@ -100,7 +96,9 @@ function LddPlayer($window, $interval, $q, $log) {
   LddPlayer.prototype.release  = function () {
       this.media.release();
       this.media = undefined;
-  };
+      this.mediaPosition = -1;
+      this.mediaDuration = -1;
+};
 
   LddPlayer.prototype.seekTo  = function (timing) {
       this.media.seekTo(timing);

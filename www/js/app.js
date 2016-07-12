@@ -31,5 +31,6 @@ angular.module('starter', ['ionic','ngAnimate','ngCordova'])
 .controller('GeoCtrl',GeoCtrl)
 .factory('geoService',LddGeoServiceFactory)
 .factory('LddPlayer',LddPlayer)
+.factory('nora',Nora)
 .config(LddStates);
 
