@@ -2,12 +2,12 @@
 
 
 // inject deps
-AssetsCtrl.$inject=['$scope','$rootScope','$cordovaSocialSharing','LddPlayer','nora','$ionicLoading','$ionicPlatform','$log'];
+AssetsCtrl.$inject=['$scope','$rootScope','$cordovaSocialSharing','geoService','LddPlayer','nora','$ionicLoading','$ionicPlatform','$log'];
 
 
 
 // implement service
-function AssetsCtrl($scope, $rootScope, $cordovaSocialSharing,LddPlayer, nora, $ionicLoading, $ionicPlatform, $log) {
+function AssetsCtrl($scope, $rootScope, $cordovaSocialSharing, geoService, LddPlayer, nora, $ionicLoading, $ionicPlatform, $log) {
 
 /**
 	{
@@ -181,9 +181,19 @@ function AssetsCtrl($scope, $rootScope, $cordovaSocialSharing,LddPlayer, nora, $
 
 	});
 
-	// $ionicPlatform.ready(function(){
 
-	// });
+
+	//
+	//  init plateform
+	$ionicPlatform.ready(function(){
+		$ionicLoading.show({
+      template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Acquiring location!'
+    });
+
+    geoService.init().finally(function () {
+      $ionicLoading.hide();                      
+    });		
+	});
 
 }
 

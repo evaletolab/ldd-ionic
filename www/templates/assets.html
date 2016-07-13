@@ -1,5 +1,20 @@
-<ion-view view-title="Assets">
+<ion-view view-title="LDD game">
   <ion-content>
+    <!-- http://ionicframework.com/docs/components/ -->
+    <div class="card" ng-if="!items.length">
+      <div class="item item-text-wrap text-center">
+        <i class="fa fa-info-circle"></i>
+        Aucun contenu disponible pour l'instant 
+      </div>
+    </div>        
+
+    <div class="lddgame">
+      <div class="button" on-dash ng-click="toggle()" ng-class="{'disabled':!items.length}">
+        <i class="fa fa-4x" aria-hidden="true"
+          ng-class="{'fa-play-circle':!options.autoPlay,'fa-pause':options.autoPlay}"></i>
+      </div>          
+    </div>
+
     <ion-list show-delete="options.showDelete" can-swipe="true" >
 
         <ion-item ng-repeat="item in items|filter:{currentZone:currentZone}" 
@@ -23,19 +38,9 @@
         </ion-item>
 
 
-<!--         <ion-item _href="#" _class="item-thumbnail-left">
-            <h2>Item 1</h2>
-            <ion-option-button class="button-positive ion-ios-pulse ">L</ion-option-button>
-            <ion-option-button class="button-light icon ion-email"></ion-option-button>
-            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
-        </ion-item>
-        <ion-item ng-click="select" >
-            <h2>Item 2</h2>
-            <ion-option-button class="button-light icon ion-heart"></ion-option-button>
-            <ion-option-button class="button-light icon ion-email"></ion-option-button>
-            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
-        </ion-item>
- -->    
+
+
+
     </ion-list>
   </ion-content>
 </ion-view>
