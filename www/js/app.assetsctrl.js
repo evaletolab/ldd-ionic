@@ -169,7 +169,7 @@ function AssetsCtrl($scope, $rootScope, $cordovaSocialSharing, geoService, LddPl
 
 
 		nora.assets_for_current_zone().forEach(function(item,i) {
-			// console.log('----------------------('+$scope.items.length+') id:'+item.id+' zone:'+$scope.currentZone)
+			console.log('----------------------('+$scope.items.length+') id:'+item.id+' zone:'+$scope.currentZone)
 			if(!_.find($scope.items,{id:item.id})&&item.audio_file){
 				item.currentZone=$scope.currentZone;
 				$scope.items.push(item);
@@ -177,6 +177,7 @@ function AssetsCtrl($scope, $rootScope, $cordovaSocialSharing, geoService, LddPl
 
 		});
 
+		$scope.$apply();
 
 
 	});

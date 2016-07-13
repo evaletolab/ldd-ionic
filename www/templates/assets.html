@@ -1,19 +1,21 @@
 <ion-view view-title="LDD game">
   <ion-content>
+    <!-- https://www.airpair.com/ionic/a-year-using-ionic-for-hybrid-ios-android-apps -->
     <!-- http://ionicframework.com/docs/components/ -->
-    <div class="card" ng-if="!items.length">
-      <div class="item item-text-wrap text-center">
-        <i class="fa fa-info-circle"></i>
-        Aucun contenu disponible pour l'instant 
-      </div>
-    </div>        
 
-    <div class="lddgame">
+    <div class="lddgame ">
       <div class="button" on-dash ng-click="toggle()" ng-class="{'disabled':!items.length}">
         <i class="fa fa-4x" aria-hidden="true"
           ng-class="{'fa-play-circle':!options.autoPlay,'fa-pause':options.autoPlay}"></i>
       </div>          
     </div>
+
+    <div class="card" ng-show="!items.length">
+      <div class="item item-text-wrap text-center">
+        <i class="fa fa-info-circle"></i>
+        Aucun contenu disponible pour l'instant 
+      </div>
+    </div>        
 
     <ion-list show-delete="options.showDelete" can-swipe="true" >
 
@@ -24,14 +26,12 @@
           <i ng-class="{'ion-android-radio-button-off':!item.played,'ion-android-checkmark-circle':item.played}"></i>
           {{item.title}} ({{currentZone}}) <span ng-show="item.duration">({{item.position|number:2}}/{{item.duration|number:2}})</span>
           <i ng-class="{'ion-ios-play':item.pause,'ion-ios-pause':item.play}" class="pull-right "></i>
-<!--           
-          <img ng-src="{{item.img}}">
-          <h2>{{item.h}}</h2>
-          <p>{{item.p}}</p>
- -->          
-          <ion-delete-button class="ion-minus-circled" 
+
+<!--           <ion-delete-button class="ion-minus-circled" 
                              ng-click="onItemDelete(item)"></ion-delete-button>
           </ion-option-button>
+ -->      
+
           <ion-option-button class="button-calm"
                              ng-click="share(item)">Share</ion-option-button>
           <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>

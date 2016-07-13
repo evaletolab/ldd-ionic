@@ -67,10 +67,6 @@
   display:none;
 }
 
-.lddgame, .scroll {
-  height: 100%;
-  min-height: 100%;
-}
 
 .green {
   color:#00ff00;
